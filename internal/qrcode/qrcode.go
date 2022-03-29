@@ -3,33 +3,16 @@
  *
  * Funzioni per la generazione dei QR code destinati ai libri.
  *
- * Copyright (c) 2020 Antonio Napolitano <nap@antonionapolitano.eu>
- *
- * This file is part of LilBib.
- *
- * LilBib is free software; you can redistribute it and/or modify it
- * under the terms of the Affero GNU General Public License as
- * published by the Free Software Foundation; either version 3, or (at
- * your option) any later version.
- *
- * LilBib is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE.  See the Affero GNU General
- * Public License for more details.
- *
- * You should have received a copy of the Affero GNU General Public
- * License along with LilBib; see the file LICENSE. If not see
- * <http://www.gnu.org/licenses/>.
+ * Copyright (c) 2022 Davide Vendramin <davidevendramin5@gmail.com>
  */
 
 // Funzioni per la generazione dei QR code destinati ai libri.
 package qrcode
 
 import (
-	"encoding/base64"
-	"git.napaalm.xyz/napaalm/LilBib/internal/db"
-	"git.napaalm.xyz/napaalm/LilBib/internal/hash"
-	qrcode "github.com/skip2/go-qrcode"
+	_ "encoding/base64"
+	_ "github.com/pentecoste/webcanarie/internal/hash"
+	_ "github.com/skip2/go-qrcode"
 	"strings"
 )
 
@@ -38,7 +21,7 @@ type QRCodeLibro struct {
 	Titolo string
 	QRCode []byte
 }
-
+/*
 // Genera il codice QR per il libro del codice indicato.
 func CreateQRCode(id uint32) (QRCodeLibro, error) {
 
@@ -124,4 +107,4 @@ func GeneratePage(ids []uint32) (string, error) {
 	page.WriteString("</body></html>")
 
 	return page.String(), nil
-}
+}*/
