@@ -530,16 +530,16 @@ footer>div>p>a:hover {
     display:block;
   }
 
+  .horizontalLine {
+    height:6vw;
+  }
+
   .dropdownButton {
     border:none;
     cursor:pointer;
     font-size:28px;
     color:white;
     background-color:#232C33;
-  }
-
-  .dropdownButton:hover{
-    color: #F0803C;
   }
 
   .dropdown {
@@ -723,6 +723,10 @@ footer>div>p>a:hover {
     padding: 1.8%;
   }
 
+  .horizontalLine {
+    height:7vw;
+  }
+
   .previewCaptionBox {
     margin-top:4%;
     position:relative;
@@ -852,10 +856,6 @@ footer>div>p>a:hover {
     font-size:24px;
     color:white;
     background-color:#232C33;
-  }
-
-  .dropdownButton:hover{
-    color: #F0803C;
   }
 
   .dropdown {

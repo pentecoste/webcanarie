@@ -19,7 +19,7 @@
 <body>
 <header>
 	<div>
-		<img class="headerLogo" src="/static/img/logo_mini1.png"/>
+		<img class="headerLogo" src="/static/img/logos/logo_mini1.png"/>
 		<nav class="headerNav">
 			<ul>
 				<li><a class="headerText" href="/">Home</a></li>
@@ -40,21 +40,37 @@
 	</div>
 </header>
 
-<img class="imgLogo" src="/static/img/logo_beige.png"></img>
+<img class="imgLogo" src="/static/img/logos/logo_beige.png"></img>
 
 <div class="horizontalLine"></div>
 
 <div class="previewContainer">
   <div class="slideshowWrapper">
     <div class="slideshowContainer" id="slideshow1">
-      <div class="showSlide fade">
-        <img class="previewImg" src="/static/img/spiaggia1.jpg"></img>
-        <div class="slideshowCaption">Playa Grande</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" src="/static/img/lanzarote.jpg"></img>
-        <div class="slideshowCaption">Vulcani</div>
-      </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/playagrande.png"></img>
+          <div class="slideshowCaption">Playa Grande</div>
+        </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/lanzarote.png"></img>
+          <div class="slideshowCaption">Parco nazionale Timanfaya</div>
+        </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/papagayo.png"></img>
+          <div class="slideshowCaption">Playa de Papagayo</div>
+        </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/mare1.png"></img>
+          <div class="slideshowCaption">Playa de la Cera</div>
+        </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/spiaggia2.png"></img>
+          <div class="slideshowCaption">Playa de la Francesa</div>
+        </div>
+        <div class="showSlide fade">
+	  <img class="previewImg" src="/static/img/isle/teguise.png"></img>
+          <div class="slideshowCaption">Teguise</div>
+        </div>
       <a class="left" onclick="nextSlide(-1, 'slideshow1')">&#10094;</a>  
       <a class="right" onclick="nextSlide(1, 'slideshow1')">&#10095;</a> 
     </div>
@@ -69,16 +85,48 @@
   <div class="slideshowWrapper">
     <div class="slideshowContainer" id="slideshow2">
       <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/letto1.jpeg"></img>
-	<div class="slideshowCaption">Camera matrimoniale</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/cucina1.jpeg"></img>
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/cucina1.jpeg"></img>
 	<div class="slideshowCaption">Cucina e soggiorno</div>
       </div>
       <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/bagno1.jpeg"></img>
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/cucina2.jpeg"></img>
+	<div class="slideshowCaption">Cucina e soggiorno</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/tv1.jpeg"></img>
+	<div class="slideshowCaption">Cucina e soggiorno</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto1.jpeg"></img>
+	<div class="slideshowCaption">Camera matrimoniale</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto2.jpeg"></img>
+	<div class="slideshowCaption">Camera matrimoniale</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto_luce2.jpeg"></img>
+	<div class="slideshowCaption">Camera matrimoniale</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto1.jpeg"></img>
+	<div class="slideshowCaption">Seconda camera</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto2.jpeg"></img>
+	<div class="slideshowCaption">Seconda camera</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto_luce2.jpeg"></img>
+	<div class="slideshowCaption">Seconda camera</div>
+      </div>
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/bagno1.jpeg"></img>
 	<div class="slideshowCaption">Bagno</div>
+      </div> 
+      <div class="showSlide fade">
+        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/piscina.png"></img>
+	<div class="slideshowCaption">Piscina</div>
       </div>
 
       <a class="left" onclick="nextSlide(-1, 'slideshow2')">&#10094;</a>  
@@ -94,7 +142,7 @@
 <div class="spaceBelowPreview"></div>
 
 <div class="titleInfoContact">Informazioni di base</div>
-<div class="captionInfoContact">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mauris at odio varius dapibus quis eget mi. In sit amet vehicula eros. Suspendisse sodales tellus sed erat elementum, sit amet viverra augue pharetra. Sed felis mi, egestas a porta ac, convallis sed lorem. Nulla hendrerit, arcu nec venenatis porta, purus sem accumsan ante, tincidunt rutrum sem orci eu diam. Suspendisse potenti. Fusce id purus magna. In sed dapibus sapien. Suspendisse efficitur mattis lorem, eu facilisis ipsum sollicitudin non. Nulla nec nisl at ex ornare efficitur elementum at nibh. Curabitur eget est vel magna pretium egestas. Vivamus accumsan pellentesque nulla, et sodales elit egestas sit amet. Nulla ullamcorper finibus maximus. </div>
+<div class="captionInfoContact">Si tratta di un appartamento di oltre 60 mq, inclusa la terrazza con vista mare, che può ospitare fino a 5/6 persone. E' inserito in un residence con piscina e costituito da una spaziosa camera matrimoniale, una seconda camera con divano letto, un bagno e un ampio soggiorno con cucina e divano letto. Situato in una tranquilla zona residenziale e ben servita di Puerto del Carmen, dista circa 300 metri dal mare e dalle spiagge di Playa Grande e Playa Blanca.</div>
 
 <div class="titleInfoContact">Contatti</div>
 <div class="contactHome">

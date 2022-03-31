@@ -15,6 +15,7 @@ import (
 	_ "github.com/pentecoste/webcanarie/internal/auth"
 	_ "github.com/pentecoste/webcanarie/internal/config"
 	_ "github.com/pentecoste/webcanarie/internal/hash"
+	_ "io/ioutil"
 	"net/http"
 	_ "net/url"
 	_ "strconv"
@@ -50,6 +51,50 @@ func HandleRootOr404(w http.ResponseWriter, r *http.Request) {
 }
 
 func HandleHome(w http.ResponseWriter, r *http.Request) {
+	/*apartment_imgs, err := ioutil.ReadDir("web/static/img/apartment/")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	isle_imgs, err := ioutil.ReadDir("web/static/img/isle/")
+        if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+
+	count := 0
+	for _, img := range apartment_imgs {
+		if !(img.IsDir()) {
+			count++
+		}
+	}
+
+	apartment_names := make([]string, count)
+	for _, img range apartment_imgs {
+		if !(img.IsDir()) {
+			apartment_names = append(apartment_names, img.Name())
+		}
+	}
+
+	count = 0
+	for _, img := range isle_imgs {
+		if !(img.IsDir()) {
+			count++
+		}
+	}
+
+	isle_names := make([]string, count)
+	for _, img range isle_imgs {
+		if !(img.IsDir()) {
+			isle_names = append(isle_names, img.Name())
+		}
+	}
+
+	templates.ExecuteTemplate(w, "index.html", struct {
+		AppImgs	    []string
+		IsleImgs    []string
+		Values      CommonValues
+	}{apartment_names, isle_names, CommonValues{Version}})*/
+
 	templates.ExecuteTemplate(w, "index.html", struct {
 		Values      CommonValues
 	}{CommonValues{Version}})
