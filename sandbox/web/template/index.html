@@ -7,6 +7,7 @@
 <meta name="description" content="Sito dell'appartamento alle Canarie"/>
 <meta name="keywords" content=""> 
 <meta name="robot" content="nofollow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
@@ -16,17 +17,27 @@
 
  
 <body>
-
 <header>
-	<img class="headerLogo" src="/static/img/logo_mini1.png"/>
-	<nav>
-		<ul>
-			<li><a class="headerText" href="/">Home</a></li>
-			<li><a class="headerText" href="/apartment">Appartamento</a>
-			<li><a class="headerText" href="/book">Prezzi e contatti</a></li>
-			<li><a class="headerText" href="/where">Dove si trova</a></li>
-		</ul>	
-	</nav>
+	<div>
+		<img class="headerLogo" src="/static/img/logo_mini1.png"/>
+		<nav class="headerNav">
+			<ul>
+				<li><a class="headerText" href="/">Home</a></li>
+				<li><a class="headerText" href="/apartment">Appartamento</a>
+				<li><a class="headerText" href="/contacts">Prezzi e contatti</a></li>
+				<li><a class="headerText" href="/whereis">Dove si trova</a></li>
+			</ul>	
+		</nav>
+		<div class="headerDropdown">
+			<button class="dropdownButton" onclick="dropdown()"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
+			<div id="myDropdown" class="dropdownContent">
+				<a href="/">Home</a>
+				<a href="/apartment">Appartamento</a>
+				<a href="/contacts">Prezzi e Contatti</a>
+				<a href="/whereis">Dove si trova</a>
+			</div>
+		</div>
+	</div>
 </header>
 
 <img class="imgLogo" src="/static/img/logo_beige.png"></img>
@@ -38,7 +49,7 @@
     <div class="slideshowContainer" id="slideshow1">
       <div class="showSlide fade">
         <img class="previewImg" src="/static/img/spiaggia1.jpg"></img>
-        <div class="slideshowCaption">Playa</div>
+        <div class="slideshowCaption">Playa Grande</div>
       </div>
       <div class="showSlide fade">
         <img class="previewImg" src="/static/img/lanzarote.jpg"></img>
@@ -50,24 +61,20 @@
   </div>
   <div class="previewCaptionBox">
     <div class="previewCaptionTitle">L'isola</div>
-    <div class="previewCaption">"Ho scoperto Lanzarote, isola meravigliosa dell'arcipelago delle Canarie, dolce e selvaggia. Me ne sono innamorato. Ho deciso di acquistare un appartamento a Puerto del Carmen, capitale turistica dell'isola, per godermi in qualche periodo dell'anno il mare, le bellissime spiaggie, il caldo e il clima mite in tutte le stagioni, i paesaggi unici di origine vulcanica, la bellezza dei bianchi villaggi, la varietà dei cibi e la vita in libertà. L'alloggio è anche a Vostra disposizione per l'affitto turistico."</div>
+    <div class="previewCaption">"Ho scoperto Lanzarote, isola meravigliosa dell'arcipelago delle Canarie, dolce e selvaggia. Mi sono innamorato del suo mare, delle bellissime spiagge, del caldo e del clima mite in tutte le stagioni, dei paesaggi unici di origine vulcanica, della bellezza dei bianchi villaggi, della varietà dei cibi e della vita in libertà."</div>
   </div>
 </div>
 
-<div class="previewContainer">
-  <div class="previewCaptionBox">
-    <div class="previewCaptionTitle">L'appartamento</div>
-    <div class="previewCaption">"Vi invito a scoprire Lanzarote e a trascorrere una vacanza a Puerto del Carmen, strategico punto di partenza per le escursioni verso le numerose bellezze dell'isola e luogo ideale per rilassarsi e godersi in tranquillità le spiaggie, il mare e l'allegra vita che si respira passeggiando in ogni momento della giornata tra i ristoranti e i negozi della famosa Avenida della Playa, che costeggia per chilometri il mare di Puerto, raggiungibile dall'appartamento in soli 5 minuti a piedi."</div>
-  </div>
+<div id="inverted" class="previewContainer">
   <div class="slideshowWrapper">
     <div class="slideshowContainer" id="slideshow2">
       <div class="showSlide fade">
         <img class="previewImg" style="margin-right:15px;" src="/static/img/letto1.jpeg"></img>
-	<div class="slideshowCaption">Camera da letto</div>
+	<div class="slideshowCaption">Camera matrimoniale</div>
       </div>
       <div class="showSlide fade">
         <img class="previewImg" style="margin-right:15px;" src="/static/img/cucina1.jpeg"></img>
-	<div class="slideshowCaption">Cucina</div>
+	<div class="slideshowCaption">Cucina e soggiorno</div>
       </div>
       <div class="showSlide fade">
         <img class="previewImg" style="margin-right:15px;" src="/static/img/bagno1.jpeg"></img>
@@ -78,26 +85,33 @@
       <a class="right" onclick="nextSlide(1, 'slideshow2')">&#10095;</a> 
     </div>
   </div>
+  <div class="previewCaptionBox">
+    <div class="previewCaptionTitle">L'appartamento</div>
+    <div class="previewCaption">"Ho deciso di acquistare un appartamento a Puerto del Carmen, capitale turistica dell'isola e strategico punto di partenza per le escursioni verso le numerose bellezze di Lanzarote. L'alloggio è a Vostra disposizione per l'affitto turistico, quindi vi invito a trascorrere una vacanza in questo meraviglioso luogo, ideale per rilassarsi e godersi in tranquillità le spiaggie, il mare e l'allegra vita che si respira passeggiando in ogni momento della giornata tra i ristoranti e i negozi della famosa Avenida de las Playas, che costeggia per chilometri il mare di Puerto, raggiungibile dall'appartamento in soli 5 minuti a piedi."</div>
+  </div>
 </div>
 
 <div class="spaceBelowPreview"></div>
 
 <div class="titleInfoContact">Informazioni di base</div>
-<div class="captionInfoContact">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mauris at odio varius dapibus quis eget mi. In sit amet vehicula eros. Suspendisse sodales tellus sed erat elementum, sit amet viverra augue pharetra. Sed felis mi, egestas a porta ac, convallis sed lorem. Nulla hendrerit, arcu nec venenatis porta, purus sem accumsan ante, tincidunt rutrum sem orci eu diam. Suspendisse potenti. Fusce id purus magna. In sed dapibus sapien. Suspendisse efficitur mattis lorem, eu facilisis ipsum sollicitudin non. Nulla nec nisl at ex ornare efficitur elementum at nibh. Curabitur eget est vel magna pretium egestas. Vivamus accumsan pellentesque nulla, et sodales elit egestas sit amet. Nulla ullamcorper finibus maximus.</div>
+<div class="captionInfoContact">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mauris at odio varius dapibus quis eget mi. In sit amet vehicula eros. Suspendisse sodales tellus sed erat elementum, sit amet viverra augue pharetra. Sed felis mi, egestas a porta ac, convallis sed lorem. Nulla hendrerit, arcu nec venenatis porta, purus sem accumsan ante, tincidunt rutrum sem orci eu diam. Suspendisse potenti. Fusce id purus magna. In sed dapibus sapien. Suspendisse efficitur mattis lorem, eu facilisis ipsum sollicitudin non. Nulla nec nisl at ex ornare efficitur elementum at nibh. Curabitur eget est vel magna pretium egestas. Vivamus accumsan pellentesque nulla, et sodales elit egestas sit amet. Nulla ullamcorper finibus maximus. </div>
 
 <div class="titleInfoContact">Contatti</div>
 <div class="contactHome">
     <div class="contact"><i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none;">  appmappi</a></div>
-    <div class="contact"><i class="fa fa-envelope"></i>  appmappi@gmail.com</div>
+    <div class="contact"><i class="fa fa-envelope"></i>  appartamentomappi@gmail.com</div>
     <div class="contact"><i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none;">  appmappi</a></div>
 </div>
 
 <footer>
-  <p class="footerLeft">© 2022 | Appartamento Puerto del Carmen, Lanzarote</p>
-  <p class="footerRight"><i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none">  appmappi</a></p>
+  <div>
+    <p>© 2022 | Appartamento Puerto del Carmen, Lanzarote</p>
+    <p id="contactFooter"><i class="fa fa-envelope"></i>  appmappi@gmail.com | <i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none">  appmappi</a> | <i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none">  appmappi</a></p>
+  </div>
 </footer>
 
 <script src="/static/js/slideshow.js" type="text/javascript"></script>
+<script src="/static/js/dropdown.js" type="text/javascript"></script>
 
 </body>
 

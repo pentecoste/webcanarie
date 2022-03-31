@@ -34,6 +34,8 @@ type CommonValues struct {
 var templates = template.Must(template.ParseFiles(
 	templatesDir+"/index.html",
 	templatesDir+"/appartamento.html",
+	templatesDir+"/contacts.html",
+	templatesDir+"/whereis.html",
 ))
 
 // Handler per qualunque percorso diverso da tutti gli altri percorsi riconosciuti.
@@ -53,8 +55,20 @@ func HandleHome(w http.ResponseWriter, r *http.Request) {
 	}{CommonValues{Version}})
 }
 
-func handleApartment(w http.ResponseWriter, r *http.Request) {
+func HandleApartment(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "appartamento.html", struct {
+		Values      CommonValues
+	}{CommonValues{Version}})
+}
+
+func HandleContacts(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "contacts.html", struct {
+		Values      CommonValues
+	}{CommonValues{Version}})
+}
+
+func HandleWhereIs(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "whereis.html", struct {
 		Values      CommonValues
 	}{CommonValues{Version}})
 }

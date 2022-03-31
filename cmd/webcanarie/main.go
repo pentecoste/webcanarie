@@ -40,6 +40,8 @@ func main() {
 	// sempre l'ultimo.
 	mux.HandleFunc("/", handlers.HandleRootOr404)
 	mux.HandleFunc("/apartment", handlers.HandleApartment)
+	mux.HandleFunc("/contacts", handlers.HandleContacts)
+	mux.HandleFunc("/whereis", handlers.HandleWhereIs)
 
 	// File server per servire direttamente i contenuti statici.
 	fileserver := http.FileServer(http.Dir("web/static"))
