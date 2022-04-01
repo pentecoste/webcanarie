@@ -1,6 +1,6 @@
 [Generale]
 fqdn_sito="webcanarie.example.org"
-porta_http=":8080"
+porta_http=":8083"
 lunghezza_pagina=24
 utente_admin="admin"
 
