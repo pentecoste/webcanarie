@@ -16,24 +16,27 @@
 
 
  
-<body style="background-color:#FFD7B4;">
+<body style="background-color:#1A2126;">
 
 <header>
 	<div>
 		<img class="headerLogo" src="/static/img/logos/logo_mini1.png"/>
-		<nav class="headerNav">
+		<nav>
 			<ul>
 				<li><a class="headerText" href="/">Home</a></li>
-				<li><a class="headerText" href="/apartment">Appartamento</a>
+				<li><a class="headerText" href="/apartment/1">Appartamento</a></li>
+				<li><a class="headerText" href="/availability">Disponibilità</a></li>
 				<li><a class="headerText" href="/contacts">Prezzi e contatti</a></li>
 				<li><a class="headerText" href="/whereis">Dove si trova</a></li>
 			</ul>	
 		</nav>
+
 		<div class="headerDropdown">
-			<button class="dropdownButton" onclick="dropdown()"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
-			<div id="myDropdown" class="dropdownContent">
+			<button class="dropdownButton" name="myDropdown1"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
+			<div id="myDropdown1" class="dropdownContent">
 				<a href="/">Home</a>
-				<a href="/apartment">Appartamento</a>
+				<a href="/apartment/1">Appartamento</a>
+				<a href="/availability">Disponibilità</a>
 				<a href="/contacts">Prezzi e Contatti</a>
 				<a href="/whereis">Dove si trova</a>
 			</div>
@@ -41,20 +44,63 @@
 	</div>
 </header>
 
-<div class="workInProgress-wrap">
+<div class="centerApartment">
+<div class="apartmentWrapper">
+
+	<div class="columnLeftApartment">
+		{{ range $index, $value := .Stanze}}
+			<div class="apartmentRoomWrapper">
+				<a class="apartmentRoom" href="/apartment/{{$value.Codice}}" {{ if eq ($index) ($.IdStanza)}}style="color:#F0803C;"{{ end }}>{{$value.Nome}}</a>
+			</div>
+		{{ end }}
+	</div>
+
+	<div class="slideshowWrapperApartment">
+    		<div class="slideshowContainer" id="slideshow1">
+			{{ range $index, $value := .Immagini }}
+       				<div class="showSlide fade">
+					<img class="previewImgApartment" src="{{$value.Percorso}}"></img>
+        			</div>
+			{{ end }}
+      			<a class="leftApartment" onclick="nextSlide(-1, 'slideshow1')">&#10094;</a>  
+      			<a class="rightApartment" onclick="nextSlide(1, 'slideshow1')">&#10095;</a> 
+		</div>
+	</div>
+
+</div>
+</div>
+
+<div class="apartmentDescriptionWrapper">
+	<div class="apartmentDescriptionWrapperWrapped">
+	<div class="apartmentDescription">{{.Stanza.Dotazioni}}</div>
+	</div>
+</div>
+
+<!--<div class="workInProgress-wrap">
 <div>
 <div class="titleWorkInProgress">Work In Progress...</div>
 </div>
-</div>
+</div>-->
 
 <footer>
   <div>
     <p>© 2022 | Appartamento Puerto del Carmen, Lanzarote</p>
-    <p id="contactFooter"><i class="fa fa-envelope"></i>  appmappi@gmail.com | <i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none">  appmappi</a> | <i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none">  appmappi</a></p>
+    <p id="contactFooter"><i class="fa fa-envelope"></i>  appartamentomappi@gmail.com</p>
   </div>
 </footer>
 
+<script src="/static/js/slideshow.js" type="text/javascript"></script>
 <script src="/static/js/dropdown.js" type="text/javascript"></script>
+<script>
+	window.addEventListener('scroll',function() {
+    		localStorage.setItem('scrollPosition',window.scrollY);
+	},false);
+	window.addEventListener('load',function() {
+   	 	if(localStorage.getItem('scrollPosition') !== null)
+       			window.scrollTo(0, localStorage.getItem('scrollPosition'));
+	},false);
+</script>
+
 
 </body>
 

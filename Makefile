@@ -27,16 +27,9 @@ sandbox/$(BINARY): build | sandbox/
 .PHONY: sandbox
 sandbox: sandbox/web sandbox/config sandbox/$(BINARY)
 
-#/tmp/webcanarie-database.lock: database/webcanarie_example.sql
-#	echo 'Starting database... (if it does not work add yourself to the group "docker")'
-#	./database/example-database.sh
-
-#.PHONY: database
-#database: /tmp/webcanarie-database.lock
-
 .PHONY: run
-run: build sandbox; ./$(BINARY)
-	#build sandbox database
+run: build sandbox
+	cd sandbox; ./$(BINARY)
 	
 .PHONY: release
 release: linux windows
@@ -51,7 +44,6 @@ linux:
 	mkdir -p release/$(BINARY)-$(VERSION)-$@-amd64/config
 	cp config/config.toml release/$(BINARY)-$(VERSION)-$@-amd64/config
 	cp -r web release/$(BINARY)-$(VERSION)-$@-amd64
-#	cp database/webcanarie.sql release/$(BINARY)-$(VERSION)-$@-amd64
 	GOOS=$@ GOARCH=amd64 go build -ldflags "-X main.Version=$(VERSION)" -o release/$(BINARY)-$(VERSION)-$@-amd64/ ./...
 	cd release; tar -czf $(BINARY)-$(VERSION)-$@-amd64.tar.gz $(BINARY)-$(VERSION)-$@-amd64
 
@@ -61,7 +53,6 @@ windows:
 	mkdir -p release/$(BINARY)-$(VERSION)-$@-amd64/config
 	cp config/config.toml release/$(BINARY)-$(VERSION)-$@-amd64/config
 	cp -r web release/$(BINARY)-$(VERSION)-$@-amd64
-#	cp database/webcanarie.sql release/$(BINARY)-$(VERSION)-$@-amd64
 	GOOS=$@ GOARCH=amd64 go build -ldflags "-X main.Version=$(VERSION)" -o release/$(BINARY)-$(VERSION)-$@-amd64/ ./...
 	cd release; zip -qr $(BINARY)-$(VERSION)-$@-amd64.zip $(BINARY)-$(VERSION)-$@-amd64
 

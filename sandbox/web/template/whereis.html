@@ -21,19 +21,22 @@
 <header>
 	<div>
 		<img class="headerLogo" src="/static/img/logos/logo_mini1.png"/>
-		<nav class="headerNav">
+		<nav>
 			<ul>
 				<li><a class="headerText" href="/">Home</a></li>
-				<li><a class="headerText" href="/apartment">Appartamento</a>
+				<li><a class="headerText" href="/apartment/1">Appartamento</a></li>
+				<li><a class="headerText" href="/availability">Disponibilità</a></li>
 				<li><a class="headerText" href="/contacts">Prezzi e contatti</a></li>
 				<li><a class="headerText" href="/whereis">Dove si trova</a></li>
 			</ul>	
 		</nav>
+
 		<div class="headerDropdown">
-			<button class="dropdownButton" onclick="dropdown()"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
-			<div id="myDropdown" class="dropdownContent">
+			<button class="dropdownButton" name="myDropdown1"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
+			<div id="myDropdown1" class="dropdownContent">
 				<a href="/">Home</a>
-				<a href="/apartment">Appartamento</a>
+				<a href="/apartment/1">Appartamento</a>
+				<a href="/availability">Disponibilità</a>
 				<a href="/contacts">Prezzi e Contatti</a>
 				<a href="/whereis">Dove si trova</a>
 			</div>
@@ -44,6 +47,8 @@
 <div class="indications-wrap">
 <div class="titleIndications">Indicazioni</div>
 <div class="captionIndications">Puerto del Carmen dista solo 9 chilometri dall'aereoporto Cesar Manrique di Arrecife e si raggiunge in auto in neanche  10 minuti. L'appartamento è il n. 25 ed è situato al piano rialzato del blocco superiore del Residence Haria; il complesso ha due entrate da Calle Alcorce 7 (prendere l'entrata più in alto senza numero civico, entrare e salire a destra le scale sino a trovarsi allo stesso livello di Calle Princesa Teguise, strada che si vede dalle finestre della camera matrimoniale). Si può tranquillamente parcheggiare lungo Calle Alcorce. Per il noleggio dell'auto o della moto vi sono numerose compagnie che fanno il servizio sia all'aeroporto che a Puerto del Carmen. Per informazioni sulla disponibilità di auto e la scelta della compagnia vi consigliamo il sito www.doyouspain.com (segnalo che Cicar è una compagnia locale e quella con cui mi sono trovato meglio). Di seguito trovate la mappa per orientarvi.</div>
+<div class="titleIndications">Voli da Treviso</div>
+<div class="captionIndications">I voli diretti Treviso - Lanzarote (Arrecife) e Lanzarote (Arrecife) - Treviso sono della durata di 4 ore circa.<br>Gli orari dei voli sono i seguenti:<br>- fino ad Ottobre 2022 ogni venerdì (andata ore 11:45, ritorno ore 16:00)<br>- da Novembre 2022 a Marzo 2023 ogni sabato (andata ore 11:55, ritorno ore 16:10)<br>Per i voli in partenza o in arrivo su aeroporti diversi da Treviso consultare il sito di <a href="https://www.ryanair.com/it/it" class="linkRyanair">Ryanair</a>.</div>
 </div>
 
 <div class="titleMap">Mappa</div>
@@ -53,7 +58,7 @@
 <footer>
   <div>
     <p>© 2022 | Appartamento Puerto del Carmen, Lanzarote</p>
-    <p id="contactFooter"><i class="fa fa-envelope"></i>  appmappi@gmail.com | <i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none">  appmappi</a> | <i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none">  appmappi</a></p>
+    <p id="contactFooter"><i class="fa fa-envelope"></i>  appartamentomappi@gmail.com</p>
   </div>
 </footer>
 

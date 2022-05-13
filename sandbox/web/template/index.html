@@ -21,19 +21,22 @@
 <header>
 	<div>
 		<img class="headerLogo" src="/static/img/logos/logo_mini1.png"/>
-		<nav class="headerNav">
+		<nav>
 			<ul>
 				<li><a class="headerText" href="/">Home</a></li>
-				<li><a class="headerText" href="/apartment">Appartamento</a>
+				<li><a class="headerText" href="/apartment/1">Appartamento</a></li>
+				<li><a class="headerText" href="/availability">Disponibilità</a></li>
 				<li><a class="headerText" href="/contacts">Prezzi e contatti</a></li>
 				<li><a class="headerText" href="/whereis">Dove si trova</a></li>
 			</ul>	
 		</nav>
+
 		<div class="headerDropdown">
-			<button class="dropdownButton" onclick="dropdown()"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
-			<div id="myDropdown" class="dropdownContent">
+			<button class="dropdownButton" name="myDropdown1"><i class="fa fa-bars" style="pointer-events:none;"></i></button>
+			<div id="myDropdown1" class="dropdownContent">
 				<a href="/">Home</a>
-				<a href="/apartment">Appartamento</a>
+				<a href="/apartment/1">Appartamento</a>
+				<a href="/availability">Disponibilità</a>
 				<a href="/contacts">Prezzi e Contatti</a>
 				<a href="/whereis">Dove si trova</a>
 			</div>
@@ -48,30 +51,12 @@
 <div class="previewContainer">
   <div class="slideshowWrapper">
     <div class="slideshowContainer" id="slideshow1">
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/playagrande.png"></img>
-          <div class="slideshowCaption">Playa Grande</div>
-        </div>
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/lanzarote.png"></img>
-          <div class="slideshowCaption">Parco nazionale Timanfaya</div>
-        </div>
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/papagayo.png"></img>
-          <div class="slideshowCaption">Playa de Papagayo</div>
-        </div>
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/mare1.png"></img>
-          <div class="slideshowCaption">Playa de la Cera</div>
-        </div>
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/spiaggia2.png"></img>
-          <div class="slideshowCaption">Playa de la Francesa</div>
-        </div>
-        <div class="showSlide fade">
-	  <img class="previewImg" src="/static/img/isle/teguise.png"></img>
-          <div class="slideshowCaption">Teguise</div>
-        </div>
+	{{ range $index, $value := .ImgIsl}}
+        	<div class="showSlide fade">
+			<img class="previewImg" src="{{$value.Percorso}}"></img>
+			<div class="slideshowCaption">{{$value.Descrizione}}</div>
+        	</div>
+	{{ end }}
       <a class="left" onclick="nextSlide(-1, 'slideshow1')">&#10094;</a>  
       <a class="right" onclick="nextSlide(1, 'slideshow1')">&#10095;</a> 
     </div>
@@ -85,51 +70,12 @@
 <div id="inverted" class="previewContainer">
   <div class="slideshowWrapper">
     <div class="slideshowContainer" id="slideshow2">
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/cucina1.jpeg"></img>
-	<div class="slideshowCaption">Cucina e soggiorno</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/cucina2.jpeg"></img>
-	<div class="slideshowCaption">Cucina e soggiorno</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/tv1.jpeg"></img>
-	<div class="slideshowCaption">Cucina e soggiorno</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto1.jpeg"></img>
-	<div class="slideshowCaption">Camera matrimoniale</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto2.jpeg"></img>
-	<div class="slideshowCaption">Camera matrimoniale</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/letto_luce2.jpeg"></img>
-	<div class="slideshowCaption">Camera matrimoniale</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto1.jpeg"></img>
-	<div class="slideshowCaption">Seconda camera</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto2.jpeg"></img>
-	<div class="slideshowCaption">Seconda camera</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/salotto_luce2.jpeg"></img>
-	<div class="slideshowCaption">Seconda camera</div>
-      </div>
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/bagno1.jpeg"></img>
-	<div class="slideshowCaption">Bagno</div>
-      </div> 
-      <div class="showSlide fade">
-        <img class="previewImg" style="margin-right:15px;" src="/static/img/apartment/piscina.png"></img>
-	<div class="slideshowCaption">Piscina</div>
-      </div>
-
+	{{ range $index, $value := .ImgApp}}
+      		<div class="showSlide fade">
+			<img class="previewImg" style="margin-right:15px;" src="{{$value.Percorso}}"></img>
+			<div class="slideshowCaption">{{$value.Stanza}}</div>
+      		</div>
+	{{ end }}
       <a class="left" onclick="nextSlide(-1, 'slideshow2')">&#10094;</a>  
       <a class="right" onclick="nextSlide(1, 'slideshow2')">&#10095;</a> 
     </div>
@@ -147,15 +93,13 @@
 
 <div class="titleInfoContact">Contatti</div>
 <div class="contactHome">
-    <div class="contact"><i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none;">  appmappi</a></div>
     <div class="contact"><i class="fa fa-envelope"></i>  appartamentomappi@gmail.com</div>
-    <div class="contact"><i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none;">  appmappi</a></div>
 </div>
 
 <footer>
   <div>
     <p>© 2022 | Appartamento Puerto del Carmen, Lanzarote</p>
-    <p id="contactFooter"><i class="fa fa-envelope"></i>  appmappi@gmail.com | <i class="fa fa-facebook"></i><a href="https://www.facebook.com" style="text-decoration:none">  appmappi</a> | <i class="fa fa-instagram"></i><a href="https://www.instagram.com" style="text-decoration:none">  appmappi</a></p>
+    <p id="contactFooter"><i class="fa fa-envelope"></i>  appartamentomappi@gmail.com</p>
   </div>
 </footer>
 

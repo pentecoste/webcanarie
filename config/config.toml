@@ -1,8 +1,6 @@
 [Generale]
-fqdn_sito="webcanarie.example.org"
-porta_http=":8083"
-lunghezza_pagina=24
-utente_admin="admin"
+fqdn_sito="localhost"
+porta_http=":4004"
 
 [Autenticazione]
 chiave_firma="secret"
@@ -17,3 +15,9 @@ porta="389"
 utente="admin"
 password="admin"
 base_dn="dc=example,dc=org"
+
+[SQL]
+username="webcanarie"
+password="secret"
+indirizzo="localhost"
+database="webcanarie"

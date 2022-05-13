@@ -1,9 +1,9 @@
 function dropdown() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById(this.name).classList.toggle("show");
 }
 
 window.onclick = function(event) {
-  if (!event.target.matches('.dropdownButton')) {
+  if (!event.target.matches('.dropdownButton') && !event.target.matches('.dropdownButtonApartment')) {
     var dropdowns = document.getElementsByClassName("dropdownContent");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -13,4 +13,9 @@ window.onclick = function(event) {
       }
     }
   }
-} 
+}
+
+drops = document.getElementsByClassName("dropdownButton");
+for (i = 0; i < drops.length; i++) {
+	drops[i].addEventListener('click', dropdown, false);	
+}
