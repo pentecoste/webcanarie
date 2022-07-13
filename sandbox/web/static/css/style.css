@@ -98,7 +98,8 @@ header>div>nav {
 .dropdownButton {
   border:none;
   cursor:pointer;
-  font-size:28px;
+  font-size:18px;
+  /*font-family:"Mansalva", cursive;*/
   color:white;
   background-color:#232C33;
 }
@@ -1218,7 +1219,7 @@ footer>div>p>a:hover {
   .dropdownButton {
     border:none;
     cursor:pointer;
-    font-size:28px;
+    font-size:20px;
     color:white;
     background-color:#232C33;
   }
@@ -1689,7 +1690,7 @@ footer>div>p>a:hover {
   .dropdownButton {
     border:none;
     cursor:pointer;
-    font-size:24px;
+    font-size:18px;
     color:white;
     background-color:#232C33;
   }
