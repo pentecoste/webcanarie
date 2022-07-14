@@ -45,6 +45,13 @@ type Calendario struct {
 	Buffer  []byte
 }
 
+type RecensioneElaborata struct {
+	Descrizione	string
+	Data		string
+	Persone		string
+	Icone		[]string
+}
+
 // viene inizializzato nel momento in cui viene importato il package
 var templates = template.Must(template.ParseFiles(
 	templatesDir+"/index.html",
@@ -52,6 +59,7 @@ var templates = template.Must(template.ParseFiles(
 	templatesDir+"/contacts.html",
 	templatesDir+"/availability.html",
 	templatesDir+"/whereis.html",
+	templatesDir+"/recensioni.html",
 ))
 
 // Handler per qualunque percorso diverso da tutti gli altri percorsi riconosciuti.
@@ -204,4 +212,52 @@ func HandleWhereIs(w http.ResponseWriter, r *http.Request) {
 	templates.ExecuteTemplate(w, "whereis.html", struct {
 		Values      CommonValues
 	}{CommonValues{Version}})
+}
+
+func HandleFeedbacks(w http.ResponseWriter, r *http.Request) {
+	recensioni, err := db.GetRecensioni()
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	mesi := map[string]string{
+		"January": "gennaio",
+		"February": "febbraio",
+		"March": "marzo",
+		"April": "aprile",
+		"May": "maggio",
+		"June": "giugno",
+		"July": "luglio",
+		"August": "agosto",
+		"September": "settembre",
+		"October": "ottobre",
+		"November": "novembre",
+		"December": "dicembre",
+	}
+
+	reviews := make([]RecensioneElaborata, len(recensioni))
+	for i, recensione := range recensioni {
+		reviews[i].Descrizione = recensione.Descrizione
+		reviews[i].Data = mesi[recensione.Data.Month().String()]
+		reviews[i].Data += " " + strconv.Itoa(recensione.Data.Year())
+		reviews[i].Persone = recensione.Persone
+		for _, c := range recensione.Icone {
+			switch c {
+				case 'M':
+					reviews[i].Icone = append(reviews[i].Icone, "adult_male")
+				case 'F':
+					reviews[i].Icone = append(reviews[i].Icone, "adult_female")
+				case 'm':
+					reviews[i].Icone = append(reviews[i].Icone, "child_male")
+				default:
+					reviews[i].Icone = append(reviews[i].Icone, "child_female")
+			}
+		}
+	}
+
+	templates.ExecuteTemplate(w, "recensioni.html", struct {
+		Recensioni  []RecensioneElaborata
+		Values      CommonValues
+	}{reviews, CommonValues{Version}})
 }

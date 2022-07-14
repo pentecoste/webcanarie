@@ -322,6 +322,10 @@ header>div>nav {
   line-height:1.5;
 }
 
+.contact {
+  color:#232C33;
+}
+
 .contactHome {
   position:relative;
   width:100%;
@@ -801,6 +805,52 @@ header>div>nav {
  *
  */
 
+.titleFeedbacks {
+  max-width:80%;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.feedback {
+  color:#232C33;
+  margin-left:15%;
+  margin-right:15%;
+  margin-bottom:20px;
+  padding:30px;
+}
+
+.feedbackTitle {
+  font-size:1.4vw;
+  display:flex;
+  align-items:center;
+}
+
+.feedbackNames {
+  font-weight:bold;
+  margin-left:20px;
+}
+
+.feedbackIcon {
+  height:2.8em;
+}
+
+.feedbackDate {
+  padding:0 0 0.5% 0;
+  font-size:1vw;
+  color:#565959;
+}
+
+.feedbackContent {
+  font-size:1.2vw;
+}
+
+/*
+ *
+ *
+ *
+ *
+ */
+
 .adminListWrapper {
   display:flex;
   align-items:center;
@@ -1122,6 +1172,37 @@ footer>div>p>a:hover {
 	  font-size:1.3vw;
 	}
 
+	.titleFeedbacks {
+  	  margin-bottom:10px;
+	}
+
+	.feedback {
+  	  margin-left:10%;
+  	  margin-right:10%;
+  	  margin-bottom:20px;
+  	  padding:30px;
+	}
+
+	.feedbackTitle {
+ 	  font-size:1.6vw;
+	}	
+
+	.feedbackNames {
+	  margin-left:20px;
+	}
+
+	.feedbackIcon {
+	  height:2.8em;
+	}
+
+	.feedbackDate {
+	  font-size:1.2vw;
+	}
+
+	.feedbackContent {
+	  font-size:1.4vw;
+	}
+
 }
 
 @media screen and (max-width: 1000px) and (min-width:780px) { 
@@ -1396,6 +1477,38 @@ footer>div>p>a:hover {
 
   .imgRemoveSpec {
     width:30%;
+  }
+
+  .titleFeedbacks {
+    margin-bottom:10px;
+  }
+
+  .feedback {
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:20px;
+    padding:20px;
+  }
+
+  .feedbackTitle {
+    font-size:2.8vw;
+  }	
+
+  .feedbackNames {
+    margin-left:20px;
+  }
+
+  .feedbackIcon {
+    height:2.8em;
+  }
+
+  .feedbackDate {
+    font-size:2.4vw;
+    padding:0.5% 0 1% 0;
+  }
+
+  .feedbackContent {
+    font-size:2.6vw;
   }
 
 }
@@ -1725,6 +1838,38 @@ footer>div>p>a:hover {
 
   .imgLogo {
     margin-top:60px;
+  }
+
+  .titleFeedbacks {
+    margin-bottom:10px;
+  }
+
+  .feedback {
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:20px;
+    padding:10px;
+  }
+
+  .feedbackTitle {
+    font-size:3.4vw;
+  }	
+
+  .feedbackNames {
+    margin-left:20px;
+  }
+
+  .feedbackIcon {
+    height:2.8em;
+  }
+
+  .feedbackDate {
+    font-size:3vw;
+    padding:0.5% 0 1% 0;
+  }
+
+  .feedbackContent {
+    font-size:3.2vw;
   }
 
   footer {

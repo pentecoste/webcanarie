@@ -28,6 +28,14 @@ type Prenotazione struct {
 	Fine		time.Time
 }
 
+type Recensione struct {
+	Codice		uint32
+	Descrizione	string
+	Data		time.Time
+	Persone		string
+	Icone		string
+}
+
 var db_Connection *sql.DB
 
 //Funzione per inizializzare il database
@@ -355,6 +363,48 @@ func GetLastPrenotazioni() ([]Prenotazione, error) {
 	}
 
 	return prens, nil
+}
+
+func GetRecensioni() ([]Recensione, error) {
+	//Verifico se il server è ancora disponibile
+	//Se c'è un errore, ritorna null e l'errore
+	if err := db_Connection.Ping(); err != nil {
+		return nil, err
+	}
+
+	//Esamino tutti i casi possibili di richiesta, scegliendo la query giusta per ogni situazione possibile
+	q := `SELECT Recensione.Codice,Recensione.Descrizione,Recensione.Data,Recensione.Persone,Recensione.Icone
+	      FROM Recensione
+	      ORDER BY Recensione.Data DESC`
+
+	rows, err := db_Connection.Query(q)
+	//Se c'è un errore, ritorna null e l'errore
+	if err != nil {
+		return nil, err
+	}
+	//Rows verrà chiuso una volta che tutte le funzioni normali saranno terminate oppure al prossimo return
+	defer rows.Close()
+
+	var recensioni []Recensione
+	//Rows.Next() scorre tutte le righe trovate dalla query returnando true. Quando le finisce returna false
+	for rows.Next() {
+		var fabrizio Recensione
+		var data int64
+		//Tramite rows.Scan() salvo i vari risultati nella variabile creata in precedenza. In caso di errore ritorno null e l'errore
+		if err := rows.Scan(&fabrizio.Codice, &fabrizio.Descrizione, &data, &fabrizio.Persone, &fabrizio.Icone); err != nil {
+			return nil, err
+		}
+		//Copio la variabile temporanea nell'ultima posizione dell'array
+		fabrizio.Data = time.Unix(data, 0)
+
+		recensioni = append(recensioni, fabrizio)
+	}
+	//Se c'è un errore, ritorna null e l'errore
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return recensioni, nil
 }
 
 func AddImmagine(percorso, descrizione string, stanza uint32) (uint32, error) {

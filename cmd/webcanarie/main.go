@@ -51,6 +51,7 @@ func main() {
 	mux.HandleFunc("/contacts", handlers.HandleContacts)
 	mux.HandleFunc("/availability", handlers.HandleAvailability)
 	mux.HandleFunc("/whereis", handlers.HandleWhereIs)
+	mux.HandleFunc("/feedbacks", handlers.HandleFeedbacks)
 
 	// File server per servire direttamente i contenuti statici.
 	fileserver := http.FileServer(http.Dir("web/static"))
