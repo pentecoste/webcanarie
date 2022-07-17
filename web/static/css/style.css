@@ -98,11 +98,22 @@ header>div>nav {
 .dropdownButton {
   border:none;
   cursor:pointer;
-  font-size:20px;
-  word-spacing:7px;
   font-family:"Mansalva", cursive;
   color:white;
   background-color:#232C33;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.dropdownText {
+  margin-right:15px;
+  pointer-events:none;
+}
+
+.dropdownBars {
+  font-size:40px;
+  pointer-events:none;
 }
 
 .dropdown {
@@ -828,7 +839,7 @@ header>div>nav {
 
 .feedbackNames {
   font-weight:bold;
-  margin-left:20px;
+  margin-left:2%;
 }
 
 .feedbackIcon {
@@ -1188,10 +1199,6 @@ footer>div>p>a:hover {
  	  font-size:1.6vw;
 	}	
 
-	.feedbackNames {
-	  margin-left:20px;
-	}
-
 	.feedbackIcon {
 	  height:2.8em;
 	}
@@ -1495,10 +1502,6 @@ footer>div>p>a:hover {
     font-size:2.8vw;
   }	
 
-  .feedbackNames {
-    margin-left:20px;
-  }
-
   .feedbackIcon {
     height:2.8em;
   }
@@ -1509,7 +1512,7 @@ footer>div>p>a:hover {
   }
 
   .feedbackContent {
-    font-size:2.6vw;
+    font-size:2.5vw;
   }
 
 }
@@ -1804,9 +1807,17 @@ footer>div>p>a:hover {
   .dropdownButton {
     border:none;
     cursor:pointer;
-    font-size:18px;
+    font-size:20px;
     color:white;
     background-color:#232C33;
+  }
+
+  .dropdownText {
+    margin-right:12px;
+  }
+
+  .dropdownBars {
+    font-size:30px;
   }
 
   .dropdown {
@@ -1856,10 +1867,6 @@ footer>div>p>a:hover {
     font-size:3.4vw;
   }	
 
-  .feedbackNames {
-    margin-left:20px;
-  }
-
   .feedbackIcon {
     height:2.8em;
   }
@@ -1870,7 +1877,7 @@ footer>div>p>a:hover {
   }
 
   .feedbackContent {
-    font-size:3.2vw;
+    font-size:3vw;
   }
 
   footer {
