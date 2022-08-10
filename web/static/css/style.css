@@ -829,12 +829,17 @@ header>div>nav {
   margin-right:15%;
   margin-bottom:20px;
   padding:30px;
+  width:70%;
 }
 
 .feedbackTitle {
   font-size:1.4vw;
   display:flex;
   align-items:center;
+}
+
+.feedbackIcons {
+  flex-shrink:0;
 }
 
 .feedbackNames {
@@ -1193,6 +1198,7 @@ footer>div>p>a:hover {
   	  margin-right:10%;
   	  margin-bottom:20px;
   	  padding:30px;
+  	  width:80%;
 	}
 
 	.feedbackTitle {
@@ -1496,6 +1502,7 @@ footer>div>p>a:hover {
     margin-right:5%;
     margin-bottom:20px;
     padding:20px;
+    width:90%;
   }
 
   .feedbackTitle {
@@ -1861,6 +1868,7 @@ footer>div>p>a:hover {
     margin-right:5%;
     margin-bottom:20px;
     padding:10px;
+    width:90%;
   }
 
   .feedbackTitle {
