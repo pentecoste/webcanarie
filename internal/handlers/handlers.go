@@ -145,6 +145,7 @@ func HandleContacts(w http.ResponseWriter, r *http.Request) {
 
 func HandleAvailability(w http.ResponseWriter, r *http.Request) {
 	now := time.Now()
+	now= time.Date(now.Year(), now.Month(), 1, 0, 0, 0, 0, time.UTC)
 	mesi := map[string]string{
 		"January": "Gennaio",
 		"February": "Febbraio",
