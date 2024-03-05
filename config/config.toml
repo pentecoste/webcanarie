@@ -2,20 +2,6 @@
 fqdn_sito="localhost"
 porta_http=":4004"
 
-[Autenticazione]
-chiave_firma="secret"
-usa_sso=false
-sso_url="https://sso.example.org"
-cookie_sicuri=true
-dummy_auth=false
-
-[LDAP]
-host="ldap.example.org"
-porta="389"
-utente="admin"
-password="admin"
-base_dn="dc=example,dc=org"
-
 [SQL]
 username="webcanarie"
 password="secret"
