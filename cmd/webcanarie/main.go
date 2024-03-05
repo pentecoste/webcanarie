@@ -13,7 +13,6 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/pentecoste/webcanarie/internal/auth"
 	"github.com/pentecoste/webcanarie/internal/config"
 	"github.com/pentecoste/webcanarie/internal/handlers"
 	"github.com/pentecoste/webcanarie/internal/db"
@@ -33,8 +32,6 @@ func main() {
 	}
 
 	defer db.ChiudiDB()
-
-	auth.InitializeSigning()
 
 	fmt.Println("WebCanarie versione: " + Version)
 

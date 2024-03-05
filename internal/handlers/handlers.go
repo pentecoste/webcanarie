@@ -11,10 +11,8 @@ package handlers
 
 import (
 	_ "encoding/json"
-	_ "github.com/pentecoste/webcanarie/internal/auth"
 	_ "github.com/pentecoste/webcanarie/internal/config"
 	"github.com/pentecoste/webcanarie/internal/db"
-	_ "github.com/pentecoste/webcanarie/internal/hash"
 	_ "io/ioutil"
 	"net/http"
 	"time"

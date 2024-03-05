@@ -3,19 +3,11 @@ Package per gestire le diverse pagine ed i relativi template.
 
 ## Funzioni
 ```go
+func HandleRootOr404(w http.ResponseWriter, r *http.Request)
 func HandleHome(w http.ResponseWriter, r *http.Request)
-func HandleLibro(w http.ResponseWriter, r *http.Request)
-func HandleLibri(w http.ResponseWriter, r *http.Request)
-func HandleAutori(w http.ResponseWriter, r *http.Request)
-func HandleGeneri(w http.ResponseWriter, r *http.Request)
-func HandleLogin(w http.ResponseWriter, r *http.Request)
-func HandleUtente(w http.ResponseWriter, r *http.Request)
-func HandleGetLibro(w http.ResponseWriter, r *http.Request)
-func HandlePrestito(w http.ResponseWriter, r *http.Request)
-func HandleNewPrestito(w http.ResponseWriter, r *http.Request)
-func HandleRestituzione(w http.ResponseWriter, r *http.Request)
-func HandleSetRestituzione(w http.ResponseWriter, r *http.Request)
-func HandleAggiungiLibro(w http.ResponseWriter, r *http.Request) {
-func HandleGeneraCodici(w http.ResponseWriter, r *http.Request) {
+func HandleApartment(w http.ResponseWriter, r *http.Request)
+func HandleContacts(w http.ResponseWriter, r *http.Request)
+func HandleAvailability(w http.ResponseWriter, r *http.Request) {
+func HandleWhereIs(w http.ResponseWriter, r *http.Request) {
+func HandleFeedbacks(w http.ResponseWriter, r *http.Request) {
 ```
-
